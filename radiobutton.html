@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>The basic</p>
+
+<pre>
+[type=radio]{
+    position: relative;
+    margin: 40px
+}
+[type=radio]:before{
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    width: 32px;
+    height: 32px;
+    background: red
+}
+
+[type=radio]:checked:before{
+    background: green
+}
+</pre>
+
+Firefox doesn't suppor :before
+
+<pre>
+:root{padding: 40px}
+
+[name=radio]{
+    display: none
+}
+
+[for^=radio]{
+    position: relative;
+    margin: 64px
+}
+
+[for^=radio]:before{
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    width: 32px;
+    height: 32px;
+    background: red
+}
+
+[id=radio-1]:checked ~ [for=radio-1]:before,
+[id=radio-2]:checked ~ [for=radio-2]:before,
+[id=radio-3]:checked ~ [for=radio-3]:before{
+    background: green
+}
+</pre>
+
+</body>
+</html>
