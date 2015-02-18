@@ -52,11 +52,16 @@ Firefox doesn't suppor :before
     background: red
 }
 
-[id=radio-1]:checked ~ [for=radio-1]:before,
-[id=radio-2]:checked ~ [for=radio-2]:before,
-[id=radio-3]:checked ~ [for=radio-3]:before{
+[type=radio]:checked + [for^=radio]:before{
     background: green
 }
+<input id=radio-1 type=radio name=radio />
+<label for=radio-1></label>
+<input id=radio-2 type=radio name=radio />
+<label for=radio-2></label>
+<input id=radio-3 type=radio name=radio />
+<label for=radio-3></label>
+
 </pre>
 
 </body>
